@@ -1,37 +1,35 @@
 <mat-toolbar color="primary">
-    <span>TODO</span>
-  </mat-toolbar>
-  
-  <mat-card class="card">
-    <form [formGroup]="formGroup">
-      <mat-form-field appearance="outline" class="card__form">
-        <input
-          formControlName="task"
-          matInput
-          placeholder="Enter your task"
-          fxFlex="90%"
-        />
-        <!-- <mat-icon>add</mat-icon> -->
-        <button mat-icon-button fxFlex="10%"><mat-icon>add</mat-icon></button>
-      </mat-form-field>
-    </form>
-  
-    <mat-card
-      fxLayoutAlign="space-between"
-      *ngFor="let item of [1, 2, 3]"
-      ><span>hello good morning</span>
-      <div fxLayoutGap="6px">
-        <button mat-icon-button>
-          <mat-icon>update</mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon>delete</mat-icon>
-        </button>
-      </div>
-    </mat-card>
+  <span>TODO</span>
+</mat-toolbar>
+
+<mat-card class="card">
+  <form [formGroup]="formGroup">
+    <mat-form-field appearance="outline" class="card__form">
+      <input
+        formControlName="task"
+        matInput
+        placeholder="Enter your task"
+        fxFlex="90%"
+      />
+      <!-- <mat-icon>add</mat-icon> -->
+      <button mat-icon-button fxFlex="10%" (click)="addTodo()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+
+  <mat-card
+    fxLayoutAlign="space-between"
+    *ngFor="let task of todoTask$ | async; let i = index"
+  >
+    <span>{{ task.task }}</span>
+    <div fxLayoutGap="6px">
+      <button mat-icon-button>
+        <mat-icon>update</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteTodo(task.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
   </mat-card>
-  <div fxLayout="column">
-      <span>a</span>
-      <span>b</span>
-  </div>
-  
+</mat-card>

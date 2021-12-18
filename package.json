@@ -28,6 +28,8 @@
     "@nestjs/mapped-types": "^1.0.1",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/typeorm": "^8.0.2",
+    "@ngrx/store": "^13.0.2",
+    "@ngrx/store-devtools": "^13.0.2",
     "@nrwl/angular": "13.3.8",
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
