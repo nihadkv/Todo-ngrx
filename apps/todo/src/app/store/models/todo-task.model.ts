@@ -1,4 +1,4 @@
 export interface TodoTask {
-  id: string;
+  id: number;
   task: string;
 }

@@ -2,7 +2,11 @@
   <span>TODO</span>
 </mat-toolbar>
 
-<mat-card class="card">
+<mat-card
+  class="card"
+  [class.loading]="loading$ | async"
+  *ngIf="!(error$ | async); else error"
+>
   <form [formGroup]="formGroup">
     <mat-form-field appearance="outline" class="card__form">
       <input
@@ -20,9 +24,9 @@
 
   <mat-card
     fxLayoutAlign="space-between"
-    *ngFor="let task of todoTask$ | async; let i = index"
+    *ngFor="let task of todoTask$ | async"
   >
-    <span>{{ task.task }}</span>
+    <span>{{ task.todo }}</span>
     <div fxLayoutGap="6px">
       <button mat-icon-button>
         <mat-icon>update</mat-icon>
@@ -33,3 +37,4 @@
     </div>
   </mat-card>
 </mat-card>
+<ng-template #error> error occur </ng-template>
