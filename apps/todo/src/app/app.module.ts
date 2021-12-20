@@ -10,6 +10,8 @@ import { StoreModule } from '@ngrx/store';
 import { TodoReducer } from './store/reducers/todo.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { TodoEffects } from './store/effects/todo.effects';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -19,6 +21,7 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     TodoModule,
     StoreModule.forRoot({ todo: TodoReducer }),
+    EffectsModule.forRoot([TodoEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
