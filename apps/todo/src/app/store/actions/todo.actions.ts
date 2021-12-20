@@ -62,4 +62,3 @@ export class DeleteTodoFailureAction implements Action {
   constructor(public payload: Error) {}
 }
 
-// export type TodoAction = AddTodoAction;
