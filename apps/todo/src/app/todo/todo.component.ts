@@ -38,16 +38,16 @@ export class TodoComponent implements OnInit {
     // this.store.subscribe(function () {
     //   localStorage.setItem('state', JSON.stringify(this.store.getState()));
     // });
-    this.store.subscribe((res) => {
-      console.log(res);
-    });
+    // this.store.subscribe((res) => {
+    //   console.log(res);
+    // });
   }
 
   addTodo() {
     // this.formGroup.value.id = this.id();
     this.store.dispatch(new AddTodoAction(this.formGroup.value.task));
-    // this.store.dispatch(new LoadTodoAction());
     this.formGroup.reset();
+    this.store.dispatch(new LoadTodoAction());
   }
 
   deleteTodo(id: any) {

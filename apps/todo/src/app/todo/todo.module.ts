@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [TodoComponent],
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     FlexLayoutModule,
     HttpClientModule,
+    MatProgressSpinnerModule,
   ],
   exports: [TodoComponent],
 })
