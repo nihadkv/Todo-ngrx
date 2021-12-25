@@ -14,6 +14,8 @@ export class TodoService {
   }
 
   addTodo(todo: TodoTask) {
+    console.log(todo);
+
     return this.http.post(this.TODO_URL, { todo });
   }
 

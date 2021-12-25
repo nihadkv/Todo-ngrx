@@ -2,9 +2,9 @@
   <span>TODO</span>
 </mat-toolbar>
 
+<mat-spinner *ngIf="loading$ | async"></mat-spinner>
 <mat-card
   class="card"
-  [class.loading]="loading$ | async"
   *ngIf="!(error$ | async); else error"
 >
   <form [formGroup]="formGroup">
